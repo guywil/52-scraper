@@ -9,7 +9,7 @@ soup = BeautifulSoup(page.content, "html.parser")
 car_elements = soup.find_all("div", class_="list-row")
 
 for car_element in car_elements:
-    vin_element = car_element.find("a", itemprop_="name")
+    vin_element = car_element.find("a", class_="vin")
 
-print(vin_element)
-#does not work :(
+print(vin_element.text.strip())
+print()
